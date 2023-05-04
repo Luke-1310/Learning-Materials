@@ -60,8 +60,6 @@ public class Main {
                     String c = obj.next();
 
                     System.out.println("INSERISCI IL SALDO INIZIALE: ");
-                    double s = obj.nextDouble();
-
                     System.out.println("INSERISCI IL CODICE DEL CONTO: ");
                     String cod = obj.next();
 
