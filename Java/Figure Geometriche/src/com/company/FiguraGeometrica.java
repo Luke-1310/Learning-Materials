@@ -12,7 +12,7 @@ public abstract class FiguraGeometrica {
         descrizione = "d";}
 
     public void setDescrizione(String d){
-        descrizione = d;
+        this.descrizione = d;
     }
 
     public String getDescrizione(){
