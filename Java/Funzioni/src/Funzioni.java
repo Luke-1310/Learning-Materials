@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.Map.*;
 
 public class Funzioni{
     
@@ -89,11 +90,32 @@ public class Funzioni{
         return indice;
     }
 
-
     // E2: Data una stringa s ed una mappa m con chiavi intere e valori stringhe, ritorna l'insieme delle chiavi aventi come valore s.
+    public static int[] key_s(String s, Map<String, String> m){
+        
+        List<Integer> chiavi_valori = new ArrayList<>();
+        
+        //Entry è un interfaccia che rappresenta coppia chiave-valore di una mappa.
+        Iterator<Entry<String, String>> iteratore = m.entrySet().iterator();
 
-    
+        while(iteratore.hasNext()){
+            
+            Entry<String, String> entry = iteratore.next();
+
+            //obbligatorio equals perché sto confrontando stringhe
+            if(entry.getValue().equals(s)){
+                chiavi_valori.add(Integer.parseInt(entry.getKey()));
+            }
+        }
 
 
+        int [] result = new int [chiavi_valori.size()];
+        
+        for(int i = 0; i < chiavi_valori.size(); i++){
+            result[i] = chiavi_valori.get(i);
+        }
+
+        return result;
+    }
 
 }
