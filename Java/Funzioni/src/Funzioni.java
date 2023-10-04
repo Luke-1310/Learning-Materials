@@ -24,7 +24,7 @@ public class Funzioni{
 
         }
 
-        if(contatore_zeri >contatore_elementi / 2){
+        if(contatore_zeri >= contatore_elementi / 2){
             ris = true;
         }
 
@@ -118,4 +118,52 @@ public class Funzioni{
         return result;
     }
 
+    //E1: Data una matrice m di numeri interi positivi, restituisce la somma di una delle colonne avente la somma più alta possibile tra le somme di tutte le colonne. 
+    public static int somma_maggiore(int [][] matrix){
+        
+        //la matrice è quadrata, quindi anche se .lenght riguarda le righe va bene così
+        int somma = 0;
+        int somma_temp = 0;
+
+        int [] array_somme = new int[matrix.length];
+
+        for(int y = 0; y < matrix.length; y++){
+
+            for(int i = 0; i < matrix.length; i++){
+
+                somma_temp = somma_temp + matrix[i][y];
+
+            }
+
+            array_somme[y] = somma_temp;
+            somma_temp = 0;
+        }
+
+        //ora che abbiamo tutte le somme facciamo un controllo
+
+        for(int z=0; z < matrix.length; z++){
+
+            if(array_somme[z] > somma){
+                somma = array_somme[z];
+            }
+        }
+
+        return somma;
+    }
+    
+    // E2: Date due liste l1 e l2 di stringhe, ritorna true se tutte le stringhe di l1 si trovano anche all'interno di l2 e VICEVERSA; altrimenti ritorna false. 
+    public boolean ciSonoTutte(LinkedList <String> l1, LinkedList <String> l2){
+
+        boolean ris;
+
+        // Verifica se tutte le stringhe di l1 sono presenti in l2
+        boolean tutteInL2 = l2.containsAll(l1);
+        
+        // Verifica se tutte le stringhe di l2 sono presenti in l1
+        boolean tutteInL1 = l1.containsAll(l2);
+
+        ris = tutteInL1 && tutteInL2;
+
+        return ris;
+    }
 }
