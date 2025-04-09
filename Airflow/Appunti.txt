@@ -1,5 +1,14 @@
 Running Airflow 2.0 with Docker in 5 mins: https://www.youtube.com/watch?v=aTaytcxy2Ck
 
+Docker Desktop is an application for Windows and macOS that simplifies working with Docker containers. 
+It includes Docker Engine, Docker CLI, and Docker Compose, providing an all-in-one environment for building, testing, and deploying containerized 
+applications.
+
+Key Features:
+    -User-Friendly Interface: Manage containers and images without relying solely on the terminal.
+    -Built-In Kubernetes: Includes a local Kubernetes cluster for testing.
+    -Cross-Platform: Uses WSL 2 on Windows and a lightweight VM on macOS.
+    -For Developers and Teams: Ideal for streamlining development workflows.
 
 
 Airflow DAG: Coding your first DAG for Beginners: https://www.youtube.com/watch?v=IH1-0hwFZRQ
@@ -7,3 +16,8 @@ Airflow DAG: Coding your first DAG for Beginners: https://www.youtube.com/watch?
 DAG stands for directed acyclic graph which means that it is a graph with nodes directed edges and no cycles and it is a data pipeline 
 in airflow. An operator is nothing more than a task in our DAG, to be more specific it is the one who actually execute a task, if you want
 to execute a Python task then you'll probably use this operator "Pythonoperator". Every time you add a task you're also adding an operator.
+
+Create a data pipeline
+
+1st step  
+
