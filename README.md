@@ -1,2 +1,2 @@
-# EXERCISES
-In this repository there are some exercises that I've done over time
+#Learning-Materials
+This repository contains files related to tutorials and new things I want to learn over time. ☃️
