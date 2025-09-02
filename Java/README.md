@@ -1,0 +1,1 @@
+Esercizi svolti per l'idoneità Java per il corso "Progettazione del Software" seguito nel 2023
