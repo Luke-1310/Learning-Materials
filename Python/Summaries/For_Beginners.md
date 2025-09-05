@@ -1,6 +1,6 @@
 I file contengono passo passo il codice scritto nel video.
 
-### freeCodeCamp_Tutorial_Beginners
+### Python_For_Beginners
 
 Link Tutorial -> https://www.youtube.com/watch?v=rfscVS0vtbw&t=4766s
 
