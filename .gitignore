@@ -1,0 +1,16 @@
+# Virtual env
+api_env/
+venv/
+.env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+
+# Config temporanei
+.DS_Store

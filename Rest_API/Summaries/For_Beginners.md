@@ -96,7 +96,7 @@ I vincoli architetturali fondamentali sono i seguenti:
 * Code on Demand (opzionale): il server può fornire codice eseguibile al client (ad esempio JavaScript) per estenderne le funzionalità.
 * Uniform Interface: le risorse devono essere identificate in modo uniforme e accessibili con un set standard di operazioni (GET, POST, PUT, DELETE…).
 
-### 6 Usare un'API da linea di comando
+### 6 Strumenti per testare e utilizzare le API
 
 cURL è uno strumento open source utilizzato per inviare e ricevere dati da un server, supportando numerosi protocolli (HTTP, HTTPS, FTP, SMTP, ecc.).
 Può essere eseguito localmente dal proprio computer tramite riga di comando, ed è molto utile per testare API, scaricare file o automatizzare richieste di rete.
@@ -113,9 +113,29 @@ Questo permette di simulare facilmente il comportamento di un client (come un br
 
 📖 Documentazione ufficiale: https://curl.se/
 
-Twilio è una piattaforma cloud che fornisce API di comunicazione per inviare SMS, effettuare chiamate, usare WhatsApp, email e altro ancora.
-Le API di Twilio sono RESTful, quindi si possono utilizzare tramite semplici richieste HTTP.
-
-Per testarle o inviare comandi velocemente dal terminale si può usare cURL, uno strumento che consente di eseguire richieste HTTP senza dover scrivere codice.
+Twilio è una piattaforma cloud che fornisce API di comunicazione per inviare SMS, effettuare chiamate, usare WhatsApp, email e altro.
+Queste API sono RESTful, quindi si possono utilizzare tramite richieste HTTP. Per testare e utilizzare le API in modo semplice e veloce, è possibile servirsi di cURL, uno strumento da riga di comando che permette di inviare richieste HTTP senza dover scrivere codice.
 
 📖 Documentazione: https://www.twilio.com/docs
+
+Postman nasce inizialmente come estensione per Google Chrome che permetteva di richiamare e testare API.
+Con il tempo si è evoluto in un’applicazione completa e multipiattaforma, diventando uno degli strumenti più popolari e utilizzati dagli sviluppatori per:
+* inviare richieste HTTP (GET, POST, PUT, DELETE, ecc.);
+* organizzare collezioni di richieste in progetti;
+* salvare e condividere ambienti di test;
+* automatizzare test e monitoraggio delle API.
+
+Postman consente di lavorare con le API senza dover scrivere codice o usare strumenti da riga di comando come cURL.
+
+📖 Documentazione: https://www.postman.com/
+
+RESTFox è un’estensione del browser Firefox progettata per testare API REST.
+È simile a Postman per funzionalità di base, ma più leggera e integrata direttamente nel browser. Permette di:
+
+* inviare richieste HTTP;
+* aggiungere headers e parametri;
+* visualizzare in modo chiaro la risposta del server.
+
+Essendo pensata come add-on di Firefox, è utile per chi vuole un’alternativa rapida a Postman senza installare applicazioni esterne.
+
+📖 Repository GitHub: https://github.com/restfox/restfox
