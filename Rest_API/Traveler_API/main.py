@@ -47,7 +47,7 @@ def home():
 def get_destinations():
     destinations = Destination.query.all()
 
-    return jsonify(destination.to_dict() for destination in destinations) #ritorna una lista di 
+    return jsonify([destination.to_dict() for destination in destinations]) #ritorna una lista di dizionari
 
 #"http://localhost:5000/destinations/2"
 @app.route('/destinations/<int:id>', methods=['GET'])
@@ -66,7 +66,7 @@ def get_destination(id):
 def add_destination():
     data = request.get_json() #prende i dati JSON dalla richiesta
 
-    new_destination = Destination(destination=data["destination"],
+    new_destination = Destination(  destination_name=data["destination_name"],
                                   country=data["country"],
                                   rating=data["rating"])
 
