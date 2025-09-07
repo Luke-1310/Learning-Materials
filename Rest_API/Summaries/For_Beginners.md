@@ -6,7 +6,7 @@ Link Tutorial -> https://www.youtube.com/watch?v=WXsD0ZgxjRw
 
 ### 1. Definizione di Interfaccia
 
-La "I" nella sigla API (Application Programming Interface) sta per interfaccia e rappresenta il punto di contatto che permette all’utente o ad altri programmi di interagire con un oggetto (software o hardware) senza dover conoscere o gestire il suo funzionamento interno.
+La "I" nella sigla **API** (Application Programming Interface) sta per interfaccia e rappresenta il punto di contatto che permette all’utente o ad altri programmi di interagire con un oggetto (software o hardware) senza dover conoscere o gestire il suo funzionamento interno.
 Le interfacce evolvono nel tempo, adattandosi alle esigenze richieste dagli utenti o dagli sviluppatori.
 
 Un esempio semplice di interfaccia fisica è il bottone presente sugli AirPods: grazie a esso, l’utente può inviare un comando (ad esempio, riprodurre o mettere in pausa una canzone) senza preoccuparsi di come quel comando venga tradotto internamente dal dispositivo.
