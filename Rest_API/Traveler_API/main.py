@@ -49,7 +49,7 @@ def get_destinations():
 
     return jsonify([destination.to_dict() for destination in destinations]) #ritorna una lista di dizionari
 
-#"http://localhost:5000/destinations/2"
+#"http://localhost:5000/destinations/id"
 @app.route('/destinations/<int:id>', methods=['GET'])
 def get_destination(id):
     
