@@ -1,4 +1,5 @@
 Link al video -> https://www.youtube.com/watch?v=Ha3ls0EAtW8
+
 Canale -> Code with Josh
 
 ## Creare e gestire un ambiente virtuale Python con Flask
