@@ -7,41 +7,40 @@ Quando si lavora a progetti Python, è buona pratica usare un **ambiente virtual
 
 Per creare un ambiente virtuale, entrare nell'ambiente, installare le librerie e gestirlo, puoi seguire questi passaggi:
 
-# 1. Creare un ambiente virtuale nella cartella 'python_api' chiamato 'api_env'
+### 1. Creare un ambiente virtuale nella cartella 'python_api' chiamato 'api_env'
 python -m venv api_env
 
-# 2. Attivare l'ambiente virtuale
+### 2. Attivare l'ambiente virtuale
 **Windows**: (PowerShell o Prompt dei comandi): api_env\Scripts\activate
 
 **Linux/Mac**: source api_env/bin/activate
 
-# 3. Installare le librerie necessarie
+### 3. Installare le librerie necessarie
 pip install Flask
 pip install Flask-SQLAlchemy
 
-# 4. Creare il file 'requirements.txt' con tutte le librerie installate
+### 4. Creare il file 'requirements.txt' con tutte le librerie installate
 pip freeze > requirements.txt
 
-# Altri utenti potranno ricreare lo stesso ambiente con:
-pip install -r requirements.txt
+Altri utenti potranno ricreare lo stesso ambiente con: pip install -r requirements.txt
 
-# 5. Controllare la versione di Python attiva
+### 5. Controllare la versione di Python attiva
 python --version
 
-# 6. Controllare le librerie installate
+### 6. Controllare le librerie installate
 pip list
 
-# 7. Aggiornare pip all’ultima versione
+### 7. Aggiornare pip all’ultima versione
 python -m pip install --upgrade pip
 
-# 8. Disattivare l'ambiente virtuale quando hai finito
+### 8. Disattivare l'ambiente virtuale quando hai finito
 deactivate
 
-# API REST con Flask e SQLAlchemy
+### API REST con Flask e SQLAlchemy
 
 In questo progetto abbiamo creato una semplice **API REST** per gestire destinazioni di viaggio, utilizzando **Flask** come framework web e **Flask-SQLAlchemy** come ORM (Object-Relational Mapping).  
 
-## Librerie usate
+### Librerie usate
 
 - **Flask**  
   È un micro-framework Python che consente di creare applicazioni web e API in modo semplice e veloce.  
@@ -52,8 +51,6 @@ In questo progetto abbiamo creato una semplice **API REST** per gestire destinaz
 
 - **Flask-SQLAlchemy**  
   È un’estensione di Flask che integra **SQLAlchemy**, un ORM che permette di lavorare con database in modo più semplice usando classi Python invece di scrivere query SQL a mano.
-
-## Struttura principale del file `main.py`
 
 ### Creazione dell’app e configurazione database
 
