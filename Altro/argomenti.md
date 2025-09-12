@@ -6,5 +6,5 @@ oggetti contro precdurale
 eridaterietà
 classi astratte
 complessità di un algoritmo
-uml
+uml -> IN CORSO
 database SQL +NSQL
