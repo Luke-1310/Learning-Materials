@@ -14,3 +14,6 @@ __pycache__/
 
 # Config temporanei
 .DS_Store
+
+# Ignora tutto dentro la cartella LaTex
+CV/*
