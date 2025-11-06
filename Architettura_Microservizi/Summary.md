@@ -23,12 +23,40 @@ Quest’ultimo avviserà il client che il file MP3 del video è pronto per il do
 
 Infine, l’utente potrà utilizzare l’**ID univoco** ricevuto nella notifica per inviare una richiesta all’**API Gateway** e scaricare il file MP3.
 
+Ecco come potresti aggiungere la nuova sezione, mantenendo lo stile coerente con il resto del testo:
 
+## Tecnologie utilizzate
 
-Lista
-- **A:** a;
-- **B:** b;
-- c;
-- d.
+Di seguito vengono descritti i principali strumenti e tecnologie impiegati nel progetto, sia in termini generali che nel contesto specifico di questa applicazione.
+
+### **Python**
+
+Python è un linguaggio di programmazione versatile e adatto allo sviluppo di applicazioni backend.
+Nel progetto, Python viene utilizzato per implementare i vari **microservizi** (ad esempio, il servizio di upload, quello di conversione e quello di notifica), grazie alle sue librerie che semplificano la gestione di file, API REST e comunicazioni tra servizi.
+
+### **Docker**
+
+Docker è una piattaforma che consente di creare, distribuire ed eseguire applicazioni in **container**, ovvero ambienti isolati che includono tutto il necessario per l’esecuzione del software.
+In questo progetto, ogni microservizio (Gateway, Conversione, Notifica, ecc.) viene eseguito all’interno di un container Docker, garantendo **portabilità**, **scalabilità** e facilità di distribuzione.
+
+### **Kubernetes**
+
+Kubernetes è un sistema di **orchestrazione dei container**, utilizzato per gestire e coordinare più container Docker in ambienti complessi.
+Nel progetto viene utilizzato per **automatizzare il deploy**, la **scalabilità** e la **gestione** dei microservizi, assicurando che l’applicazione rimanga disponibile e bilanciata anche in caso di carichi elevati o errori di singoli componenti.
+
+### **MySQL**
+
+MySQL è un **database relazionale** che gestisce dati strutturati tramite tabelle e relazioni.
+Nel progetto può essere utilizzato, ad esempio, per memorizzare informazioni relative agli utenti, alle sessioni o ai metadati dei file convertiti, permettendo un accesso rapido e organizzato alle informazioni.
+
+### **MongoDB**
+
+MongoDB è un **database NoSQL** orientato ai documenti, ideale per memorizzare dati non strutturati come file multimediali.
+Nel progetto viene utilizzato per **salvare i video caricati** dagli utenti e i **file MP3 generati** dopo la conversione. La sua flessibilità lo rende adatto a gestire grandi quantità di dati binari in modo efficiente.
+
+### **RabbitMQ**
+
+RabbitMQ è un **message broker**, ossia un sistema che gestisce lo scambio di messaggi tra diversi servizi tramite **code (queues)**.
+Nel progetto viene utilizzato per **coordinare i microservizi**, permettendo che il servizio di conversione riceva un messaggio ogni volta che un nuovo video è stato caricato, e che il sistema di notifica venga informato quando la conversione è terminata.
 
 ---
