@@ -1,5 +1,5 @@
 Link al video -> https://www.youtube.com/watch?v=hmkF77F9TLw
-Timestamp -> 00:00:00
+Timestamp -> 00:05:00
 Canale -> freeCodeCamp.org
 REPO VIDEO-> .
 
@@ -41,8 +41,9 @@ In questo progetto, ogni microservizio (Gateway, Conversione, Notifica, ecc.) vi
 
 ### **Kubernetes**
 
-Kubernetes è un sistema di **orchestrazione dei container**, utilizzato per gestire e coordinare più container Docker in ambienti complessi.
-Nel progetto viene utilizzato per **automatizzare il deploy**, la **scalabilità** e la **gestione** dei microservizi, assicurando che l’applicazione rimanga disponibile e bilanciata anche in caso di carichi elevati o errori di singoli componenti.
+Kubernetes è un sistema di **orchestrazione dei container**, utilizzato per gestire e coordinare più container Docker in ambienti complessi; scaricato mediante **curl**, col seguente comando **curl.exe -LO "[https://dl.k8s.io/v1.34.1/bin/darwin/amd64/kubectl](https://dl.k8s.io/v1.34.1/bin/darwin/amd64/kubectl)"**. Nello specifico, curl (Client URL) è un programma da riga di comando che serve per scaricare file da internet, fare richieste GET o POST o ancora di poter comunicare con API o server web.
+
+**Minikube**, invece, è uno strumento che permette di **creare e gestire un cluster Kubernetes in locale**. È pensato principalmente per lo sviluppo e i test, poiché consente di simulare un ambiente Kubernetes completo sul proprio computer, senza bisogno di un’infrastruttura distribuita. In pratica, Minikube crea una macchina virtuale o un container che esegue un nodo Kubernetes, rendendo possibile sperimentare con pod, servizi e deployment in modo semplice e veloce.
 
 ### **MySQL**
 
