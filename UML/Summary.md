@@ -123,8 +123,8 @@ Per **required interface** si intendono gli elementi di cui un componente ha bis
 
 I dati passano attraverso diversi componenti per essere poi messi in output tramite le **porte** sulla sinistra dell’immagine. Gli elementi sulla sinistra sono noti come **provided interface**, e gli altri componenti possono interagire con esse per utilizzare le informazioni in output al fine di completare le proprie attività. È importante ricordare che i componenti interni fanno parte del **riquadro azzurro**, che rappresenta l’intero sistema.
 
-Un **componente** è un modulo del sistema che contiene le informazioni disegnato come un rettangolo con ulteriori componenti al suo interno. Nel seguente esempio si può notare due tipi di interfaccie:
+Un **componente** è un modulo del sistema che contiene le informazioni, rappresentato come un rettangolo con eventuali ulteriori componenti al suo interno. Nel seguente esempio si possono osservare due tipi di **interfacce**:
 
-![componenti_interfaccie](img/componenti_interfaccie.png)
+![componenti\_interfaccie](img/componenti_interfaccie.png)
 
-La provided interface è completata con una circonferenza e rappresenta la componente che viene fornita al sistema e quel simbolo è noto con il nome di lolipop. La required interface si conclude con una semicirconferenza e indica la componente che il sistema necessita per compleatrea la sua task.
+La **provided interface** è rappresentata da una **circonferenza**, indicando la componente che viene fornita al sistema; questo simbolo è noto come **lollipop**. La **required interface** si conclude con una **semicirconferenza** e rappresenta la componente di cui il sistema ha bisogno per completare la propria task.
