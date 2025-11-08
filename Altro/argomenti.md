@@ -10,11 +10,13 @@ Traveler_API (piccolo test introduttivo): ✅
 
 ⚠️
 
-Microservice Architecture and System Design with Python & Kubernetes
+docker
 
 UML
 
 git
+
+Microservice Architecture and System Design with Python & Kubernetes
 
 ❌
 
