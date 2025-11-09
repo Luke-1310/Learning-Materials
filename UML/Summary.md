@@ -128,3 +128,39 @@ Un **componente** è un modulo del sistema che contiene le informazioni, rappres
 ![componenti\_interfaccie](img/componenti_interfaccie.png)
 
 La **provided interface** è rappresentata da una **circonferenza**, indicando la componente che viene fornita al sistema; questo simbolo è noto come **lollipop**. La **required interface** si conclude con una **semicirconferenza** e rappresenta la componente di cui il sistema ha bisogno per completare la propria task.
+
+La porta viene rappresentata con un quadrato lungo il bordo del sistema o del componenta è utilizzata per indicare required o provided interface.
+
+Il **Subsystem Classifier** è un particolare tipo di **Component Classifier**, poiché il sottosistema eredita le stesse regole e caratteristiche di un componente. L’unica differenza risiede nel fatto che l’elemento **subsystem** è contrassegnato dalla **keyword** `subsystem`, mentre il componente utilizza la **keyword** `component`.
+
+![subsystem](img/subsystem.png)
+
+Di seguito un processo step-by-step per modellare un **executable release**. Innanzitutto si definisce l’insieme di componenti che verranno aggiornate o rilasciate: di norma si tratta di tutte le componenti presenti su un singolo nodo o, nel caso di un sistema distribuito, dell’insieme delle componenti su tutti i nodi coinvolti. È fondamentale classificare il tipo di ciascun componente — ad esempio file eseguibili, librerie, script di avvio, file di configurazione, documentazione e altri artefatti — e annotarne versione, formato e dipendenze. Vanno inoltre specificate le relazioni tra componenti e i loro vicini (dipendenze dirette, interfacce richieste/fornite, ordini di inizializzazione) per garantire che il rilascio non rompa il funzionamento complessivo. Infine, modellare i meccanismi di packaging e distribuzione (bundle, checksum, firme), le procedure di deploy e rollback e i vincoli di compatibilità tra nodi aiuta a trasformare il modello in un piano di rilascio eseguibile e ripetibile.
+
+![executable](img/modelling_executable.png)
+
+pezzi da vedere
+
+-deployment diagram
+
+-object diagram
+
+-package diagram
+
+-composite structure diagram
+
+-profile diagram
+
+-use case diagram
+
+-ACTIVTY DIAGRAM
+
+-STATE MACHINE DIAGRAM
+
+-SEQUENCE DIAGRAM
+
+-communication diagram
+
+-interaction overview diagram
+
+-timing diagram
