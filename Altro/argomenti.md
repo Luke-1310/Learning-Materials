@@ -1,20 +1,15 @@
-✅​: fatto
-
 ⚠️​: in corso
 
 ❌​: da iniziare
 
-Pyhton_For_Beginners: ✅
-
-Traveler_API (piccolo test introduttivo): ✅
 
 ⚠️
 
-docker
+git
 
 UML
 
-git
+docker
 
 Microservice Architecture and System Design with Python & Kubernetes
 
