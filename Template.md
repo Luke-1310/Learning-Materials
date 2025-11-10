@@ -13,3 +13,7 @@ Lista
 - d.
 
 ---
+
+Immagine
+
+![text alt](percorso)
