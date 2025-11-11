@@ -1,8 +1,9 @@
 Link al video -> https://www.youtube.com/watch?v=zTjRZNkhiEU&t=18s
 
-40:10
-
 Canale -> freeCodeCamp.org
+
+[Riassunto comandi](#riassunto-comandi)
+
 
 ## Introduzione a GIT series
 
@@ -12,7 +13,7 @@ Per **Version Control System** (Versioning System) è proprio ciò di cui si occ
 
 L'idea dietro questo riassunto non è tanto quella di imparare i numerosi comandi che GIT offre ma bensì come un software viene sviluppato e funziona; capire quindi il workflow di GIT per poi poter sviluppare un software.
 
-Ovviamente **GIT** e **Github** sono due cose diverse dato che il secondo è un server provider mentre il primo è proprio il tool che vogliamo imparare.
+Ovviamente **Git** e **Github** sono due cose diverse dato che il secondo è un server provider mentre il primo è proprio il tool che vogliamo imparare.
 
 ## GIT init e cartelle nascoste
 
@@ -290,4 +291,41 @@ Lista
 - **B:** b;
 - c;
 - d.
+
+
+## Riassunto comandi
+
+Ecco una lista dei comandi utilizzati in questo documento:
+
+- **git -v** oppure **git -version**: per visualizzare la versione di Git in uso
+
+- **git status**: fornisce lo stato attuale della repository Git nella cartella dove viene eseguito; nello specifico il branch e se ci sono modifiche da osservare.
+
+-  **git -init**: inizializza la cartella creando il file nascosto **.git** che serve per tenere traccia delle modifiche.
+
+- **git add**: aggiunge un file nella staging area
+
+- **git commit -m messaggio**: effettua la commit dei file nella stage area con un messaggio per spiegare le modifiche
+
+- **Schema del workflow**: `Working Dir` -> **git add** -> `Staging Area` -> **git commit** -> `Repo` -> **git push** -> `Github`
+
+- **git rm --cached <file>**: per levare un file dalla staging zone.
+
+- **git log**: puoi quindi consultare tutta la “storia” del progetto, cioè l’elenco delle versioni salvate nel tempo.
+
+- **git config**: serve per visualizzare o modificare le impostazioni di configurazione di Git, come il nome e la mail dell'utente.
+
+- **git log --oneline**: mostra la cronologia dei commit in una forma breve e leggibile occupando una sola riga.
+
+- **git branch**: mostra le diverse branch presenti nella cartella di lavoro e punta con un * la branch corrente.
+
+- **git checkout `nome-ramo`**: per cambiare ramo.
+
+- **git merge nav-bar**: per unire due rami, in questo caso si unisce il ramo "nav-bar" con il ramo "master" 
+
+- **git branch -d nav-bar**: cancella il ramo "nav-bar"
+
+- **git **
+- **git **
+
 
