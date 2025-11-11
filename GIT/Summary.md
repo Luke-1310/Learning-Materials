@@ -234,11 +234,7 @@ In questi casi, Git interrompe il processo e ti chiede di risolvere il conflitto
 
 Nel file mostrato, Git ha trovato un conflitto tra il branch corrente (`HEAD`) e il branch `footer`.
 
-<<<<<<< HEAD
-footer added
-=======
-footer was added successfully
->>>>>>> footer
+![conflitti](img/conflitti.png)
 
 Tutto ciò che si trova tra <<<<<<< HEAD e ======= rappresenta la versione corrente (cioè quella del branch in cui ti trovi).
 
