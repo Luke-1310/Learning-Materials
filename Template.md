@@ -17,3 +17,13 @@ Lista
 Immagine
 
 ![text alt](percorso)
+
+Link a una sezione nello stesso file
+
+[Nome del link](#nome-della-sezione)
+
+Devi mettere il titolo della sezione in minuscolo.
+
+Gli spazi diventano trattini (-).
+
+Caratteri speciali (accenti, punteggiatura, ecc.) vengono rimossi.

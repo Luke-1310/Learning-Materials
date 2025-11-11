@@ -159,7 +159,7 @@ Un altro file importante è sicuramente **.gitignore**, il quale permette di ign
 
 È possibile usare dei generatori di template per questa tipologia di file (.gitignore) basato sulla tipologia di progetto su cui si sta lavorando. 
 
-Il comando **git log --online** mostra la cronologia dei commit in una forma breve e leggibile occupando una sola riga, il codice abbreviato del commit (hash) e il messaggio associato. Un esempio potrebbe essere:
+Il comando **git log --oneline** mostra la cronologia dei commit in una forma breve e leggibile occupando una sola riga, il codice abbreviato del commit (hash) e il messaggio associato. Un esempio potrebbe essere:
 
 `a1b2c3d (HEAD -> main) Aggiunge il file README.md`
 
@@ -217,8 +217,31 @@ Per fare questa unione, una volta situati nel ramo master, il comando è:
 
 **git merge nav-bar**
 
-così da unire i due rami! 1:32:54
+così da unire i due rami! 
 
+Per poter cancellare la branch "nav-bar", che ormai ha concluso il suo scopo, basta andare in una branch diversa (master) e digitare:
+
+**git branch -d nav-bar**
+
+Qualora si volesse passare ad una nuova branche in un solo comando si può fare_ **git checkout -b footer**, per riunirla col branch master nuovamente.
+
+Ora, è chiaro che i due merge sono andati a buon fine perché i file erano tutti diversi non provocando nessun **conflitto**.
+
+Un **conflitto** in Git si verifica quando due branch modificano **le stesse righe di codice** in un file, e Git **non sa quale versione tenere** durante un’operazione di *merge* o *rebase*.
+
+In questi casi, Git interrompe il processo e ti chiede di risolvere il conflitto manualmente. Vediamo un esempio pratico:
+
+Nel file mostrato, Git ha trovato un conflitto tra il branch corrente (`HEAD`) e il branch `footer`.
+
+<<<<<<< HEAD
+footer added
+=======
+footer was added successfully
+>>>>>>> footer
+
+Tutto ciò che si trova tra <<<<<<< HEAD e ======= rappresenta la versione corrente (cioè quella del branch in cui ti trovi).
+
+Tutto ciò che si trova tra ======= e >>>>>>> footer rappresenta la versione in arrivo dal branch che stai cercando di unire (footer in questo caso).
 
 ---
 
