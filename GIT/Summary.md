@@ -122,35 +122,103 @@ Date:   Mon Nov 10 19:03:04 2025 +0100
     Sium2
 
 commit 7c21a8be17d6caeaee8251105e9e1e52bd84aecc
-Author: Luca Privitera <129418202+Luke-1310@users.noreply.github.com>
+Author: Luca Privitera <129418202+Luke*-1310*@users.noreply.github.com>
 Date:   Mon Nov 10 19:01:10 2025 +0100
 
     Sium
-
-
 ---
 
 ## GIT internal working e configs
 
-Lorem Ipsum **Lorem Ipsum** (lato server, eseguito su Node.js) di una web application.
+Per prima cosa, in questa sezione, si vuole capire meglio come Git apprende quelle informazioni sull'autore etc...
 
-Lista
-- **A:** a;
-- **B:** b;
-- c;
-- d.
+Il comando **git config** serve per visualizzare o modificare le impostazioni di configurazione di Git. Tra le varie informazioni si ha:
+- Nome ed indirizzo email usati nei commit
+- Preferenza globali, ovvero l'editor di testo o i colori del terminale
+- Altre impostazioni specifiche per una singola repository.
+
+In generale ci sono due modalità con cui possiamo configurare il "configuratio file":
+
+- **globlamente** con **git config --global** per impostare la configurazione per tutte i repo dell'utente sul computer. Ad esempio si potrebbe fare: 
+
+-   `git config --global user.name "Luca Rossi"`
+-   `git config --global user.email "luca@example.com"`
+
+- **localmente** per impostare la configurazione solo nel repo corrente, ovvero la cartella in cui viene eseguito il comando. Ne segue:
+
+-   `git config user.name "Luca Progetto1"`
+-   `git config user.email "progetto1@example.com"`
+
+È stato poi impostato come editor predefinito VS Code per tutte le repo, lanciando questo comando:
+
+**git config --global core.editor "code --wait"**
+
+E come verifica si è utilizzato il comando: **git config --global core.editor** che ha fornito come risultato proprio `code --wait`. Per rendere il sistema corrente di tale cambio, nella barra di ricerca di VS Code è stato digitato ">code" per poi aggiungerlo al PATH.
+
+Un altro file importante è sicuramente **.gitignore**, il quale permette di ignorare dei file dalla tracking zone; in tal modo, è possibile fare una selezione dei file di cui si vuole fare la commit e quali no. Ad esempio informazioni sensibili come l'API key non dovrebbero essere caricate per ovvie motivazioni.
+
+È possibile usare dei generatori di template per questa tipologia di file (.gitignore) basato sulla tipologia di progetto su cui si sta lavorando. 
+
+Il comando **git log --online** mostra la cronologia dei commit in una forma breve e leggibile occupando una sola riga, il codice abbreviato del commit (hash) e il messaggio associato. Un esempio potrebbe essere:
+
+`a1b2c3d (HEAD -> main) Aggiunge il file README.md`
 
 ---
 
 ## GIT merge e GIT conflitcs
 
-Lorem Ipsum **Lorem Ipsum** (lato server, eseguito su Node.js) di una web application.
+In questo paragrafo si vuole cercare di capire meglio il significato di **branch master**; ci si sposta quindi in gittwo, lo si inizializza, si crea un file index.html e mettiamo come visibile la cartella ".git" mediante le impostazioni di VS Code.
 
-Lista
-- **A:** a;
-- **B:** b;
-- c;
-- d.
+Il comando **git branch** serve per gestire i rami (branch) di un repository Git. Un branch è una linea di sviluppo indipendente, cioè una versione parallela del progetto dove puoi lavorare senza toccare il codice principale (di solito nel branch **main** o **master**). Il risultato del comando è:
+
+**git branch**
+
+`* master`
+
+ciò significa che in questo momento stiamo lavorando sul ramo denominato come "master". Graficamente si può rappresentare come segue:
+
+![branch_example](img/branch_example.png)
+
+Il ramo verde è quello principale (**master**) mentre ogni nodo corrisponde ad una commit a partire dalla quale è possibile fare un rollback se necessario.
+
+È stata fatta una commit con il file index.html nel branch "master".
+
+Per creare più rami (branches) bisogna innanzitutto avere il nome del nuovo ramo, ad esempio *nav-bar*; quindi si lancia il seguente comando: "git branch nav-bar".
+
+Ora si hanno due rami seppur si sta ancora puntando a quello principale.
+
+* master
+  nav-bar
+
+Per cambiare ramo basta digitare **git checkout `nome-ramo`** di cui si può vedere i risultati:
+
+git branch
+  master
+* nav-bar
+
+Ora bisogna fare un'ulteriore commit affinchè venga creato un nuovo ramo parallelo. A tale scopo viene creato un file *"nav-bar.html"* (**NEL NAV-BAR BRANCH**) per poi add e commit.
+
+Successivamente passando al ramo "master" mediante il comando **git checkout master** il file *nav-bar.html* è sparito! Questo perchè abbiamo cambiato ramo, ovviamente!
+
+Ora in questo ramo è stato creato un file **hero-section.html** e committato. Quindi passando da un ramo all'altro avremmo un secondo file differente in base al ramo scelto:
+
+- hero-section.html nel ramo "master"
+- nav-bar.html nel ramo "nav-bar"
+
+Con **head** si intende il nodo in cui si trova il ramo il quale, solitamente, è sempre l'ultimo ma, chiaramente, è possibile puntare anche ad un nodo precedente ove necessario.
+
+È possibile anche unire diversi rami, ciò prende il nome di **merge**. Un worflow semplice consiste nel lavorare in un ramo separato per poi unire quanto fatto nel ramo principale, di seguito uno schema rappresentativo:
+
+![merge](img/merge.png)
+
+Per unire i due rami, master e merge bisogna stare attenti anche ai conflitti che potrebbero insorgere unendoli; in questo caso sono file differenti, quindi non ci dovrebbero essere problemi.
+
+Per fare questa unione, una volta situati nel ramo master, il comando è:
+
+**git merge nav-bar**
+
+così da unire i due rami! 1:32:54
+
 
 ---
 
