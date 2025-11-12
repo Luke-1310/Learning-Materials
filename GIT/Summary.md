@@ -442,7 +442,7 @@ stash@{1}: WIP on footer: added copyright section
 
 - **git rebase <branch-di-destinazione>**: serve a spostare una serie di commit su un altro punto della storia del repository, riscrivendo la cronologia; invece di fare un merge che crea un commit di unione, il rebase “riapplica” i tuoi commit su un altro branch, come se fossero stati creati lì fin dall’inizio. *Tale comando non si fa mai sul ramo principale.* Ne segue un esempio:
 
-![pre rebase](flusso_pre_rebase.png)
+![pre rebase](img/flusso_pre_rebase.png)
 
 Si vuole aggiornare 'feature' con le modifiche di 'main'.
 
@@ -450,7 +450,7 @@ Si vuole aggiornare 'feature' con le modifiche di 'main'.
 
 *git rebase main*
 
-![post rebase](flusso_post_rebase.png)
+![post rebase](img/flusso_post_rebase.png)
 
 I commit A, B, C sono stati riapplicati sopra l'ultimo commit di `main`.
 
