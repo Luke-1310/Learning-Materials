@@ -244,13 +244,108 @@ Tutto ciò che si trova tra ======= e >>>>>>> footer rappresenta la versione in 
 
 ## GIT diff e stashing
 
-Lorem Ipsum **Lorem Ipsum** (lato server, eseguito su Node.js) di una web application.
+Il comando **git diff** serve per vedere le differenze tra varie versioni del codice nel repo, ovviamente ci si riferisce alla versioni di uno stesso file.
 
-Lista
-- **A:** a;
-- **B:** b;
-- c;
-- d.
+Per leggere il risultato di questo comando bisogna saper interpretare i simboli; si supponga quindi che ci sia un *file a* ed un *file b* che corrisponde ad una versione aggiornata del *file a* (è quindi lo stesso file):
+
+- "---" rappresenta la versione precedente del file **NON RAPPRESENTA IL CODICE RIMOSSO**
+
+- "+++" rappresenta la nuova versione **NON RAPPRESENTA IL CODICE AGGIUNTO**
+
+Poi, nel corpo del diff si ha che le righe che iniziano con "-" sono state rimosse o modificate rispetto alla versione precedente e le righe che iniziano con "+" sono nuove o modificate. Ne segue un esempio:
+
+--- a/index.html
++++ b/index.html
+@@ -8,7 +8,7 @@
+
+ <body>
+-  footer added
++  footer was added successfully
+ </body>
+
+**git diff** non da nessun risultatom invece, **git diff --staged** ci fornsice il seguente risultato:
+
+git diff --staged
+diff --git a/index.html b/index.html
+index a995a0f..b0197e1 100644
+--- a/index.html
++++ b/index.html
+@@ -6,6 +6,7 @@
+     <title>Documento 1</title>
+ </head>
+ <body>
+-    Eccoci qui, nel primo documento.
++    I would love to add a nav-bar here
++    Eccoci qui, nel primissimo documento.
+ </body>
+ </html>
+\ No newline at end of file
+
+Nel caso in cui ci fossero stati più file allora avremmo avuto un output del genere:
+
+diff --git a/footer.html b/footer.html
+index 61d4aaf..6bd7733 100644
+--- a/footer.html
++++ b/footer.html
+@@ -1,3 +1,3 @@
+ <footer>
+-    nice footer
++    nice footer wow!
+ </footer>
+\ No newline at end of file
+diff --git a/index.html b/index.html
+index a995a0f..b0197e1 100644
+--- a/index.html
++++ b/index.html
+@@ -6,6 +6,7 @@
+     <title>Documento 1</title>
+ </head>
+ <body>
+-    Eccoci qui, nel primo documento.
++    I would love to add a nav-bar here
++    Eccoci qui, nel primissimo documento.
+ </body>
+ </html>
+\ No newline at end of file
+
+Non viene mai mostrato tutto il file ma solo alcune porzioni di esso.
+
+Altri esempi di utilizzo di questo comando potrebbe esssere il confronto tra due commit con **git diff HEAD~1 HEAD** oppure tra due branch con **git diff main feature-branch**.
+
+**git stash** serve per salvare temporaneamente le modifiche non ancora committate (sia file modificati che nuovi file tracked) e ripulire la working directory, così puoi lavorare su qualcos’altro senza perdere il lavoro svolto.
+
+Si è creato un nuovo branch di nome *bugfix* e si ha modificato il file *footer.html* per poi cercare di cambiare branch ma questo cambio di ramo è stato annullato con il seguente errore:
+
+git switch footer
+
+error: Your local changes to the following files would be overwritten by checkout:
+	footer.html
+Please commit your changes or stash them before you switch branches.
+Aborting
+
+Ciò è avvenuto poiché ci sono delle modifiche da gestire in questo caso si può scegliere di metterle in una zona di stage se sono pronte per la commit oppure in stash se bisogna ancora lavorarci sopra; digitano **git stash** e poi **git switch footer** ho potuto cambiare ramo mettendo da parte il lavoro che stavo facendo.
+
+Per riprendere le modifiche una volta tornati nel ramo *bugfix* basta digitare **git stash pop** e si ha:
+
+On branch bugfix
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   footer.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (21707242fa826918a60679f12db16eb1944a7744)
+
+Tale comando applica l'ultimo stash (di default stash@{0}) e lo rimuove dalla lista.
+
+**git stash list** mostra tutti gli stash salvati finora con una lista numerata:
+
+stash@{0}: WIP on main: 123abcd fix navbar bug
+stash@{1}: WIP on footer: added copyright section
+
+**git stash apply stash@{n}** serve per applicare uno stash senza rimuoverlo della lista
+
+**git stash drop stash@{n}** o **git stash drop "stash@{n}" su windows** cancella uno stash specifico mentre **git stash clear li cancella tutti**
 
 ---
 
@@ -321,7 +416,27 @@ Ecco una lista dei comandi utilizzati in questo documento:
 
 - **git branch -d nav-bar**: cancella il ramo "nav-bar"
 
-- **git **
-- **git **
+- **git diff**: mostra le differenza tra una versione dello stesso file prima e dopo le modifiche; bisogna però aggiungere un informazione dopo diff in modo tale da "guidare" la risoluzione del comando.
+
+- **git diff --staged**: mostra le differenze tra la versione corrente (con le modifiche non aggiunte) e la versione precedente.
+
+- **git diff HEAD~1 HEAD**: mostra le differenze tra l'ultima commit e la commit prima di HEAD, ovver il penultimo commit.
+
+- **git switch -c nome-branch**: crea un nuovo branche *"nome-branch"* e sposta l'ambiente di lavoro su quella nuova branch.
+
+- **git stash** serve per salvare temporaneamente le modifiche non ancora committate (sia file modificati che nuovi file tracked) e ripulire la working directory.
+
+- **git stash pop**: applica l'ultimo stash (di default stash@{0}) e lo rimuove dalla lista.
+
+- **git stash list**: mostra tutti gli stash salvati finora con una lista numerata:
+
+stash@{0}: WIP on main: 123abcd fix navbar bug
+stash@{1}: WIP on footer: added copyright section
+
+- **git stash apply stash@{n}**: serve per applicare uno stash senza rimuoverlo della lista.
+
+- **git stash drop stash@{n}** o **git stash drop "stash@{n}" su windows** cancella uno stash specifico mentre **git stash clear li cancella tutti**.
+
+- **git checkout 31aea8d** sposta il puntatore al commit corrente (HEAD) su quel commit specifico.
 
 
