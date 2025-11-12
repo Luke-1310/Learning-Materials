@@ -351,37 +351,33 @@ stash@{1}: WIP on footer: added copyright section
 
 ## GIT rebase is not that scary
 
-Lorem Ipsum **Lorem Ipsum** (lato server, eseguito su Node.js) di una web application.
+È un comando che si occupa di "riscrivere" lo storico di un programma e che quindi va utilizzato con parsimonia. In generale, questo comando può essere utilizzato come alternativa al merge oppure come clean up tool; nell'immagine successiva il primo grafo si ha effettuando una merge mentre il secondo lo si ottiene effettuando un **rebase**.
 
-Lista
-- **A:** a;
-- **B:** b;
-- c;
-- d.
+![merge_rebase](img/merge_rebase.png)
+
+**Questo comando non è pensato per essere eseguito sul main branch ma bensì su ramo secondario!!!!**
+
+serve a spostare una serie di commit su un altro punto della storia del repository, riscrivendo la cronologia.
+
+In pratica, invece di fare un merge che crea un commit di unione, il rebase “riapplica” i tuoi commit su un altro branch, come se fossero stati creati lì fin dall’inizio.
+
+**git rebase <branch-di-destinazione>**
 
 ---
 
 ## Insight of pushing code to GITHUB
 
-Lorem Ipsum **Lorem Ipsum** (lato server, eseguito su Node.js) di una web application.
+Di base, la comunicazione con **Github**, che ricordo essere un server provider dove poter conservare il proprio codice e non è interscambiabile con Git, avviene mediante **SSH (Secure Shell)** il quale è un protocollo di comunicazione che consente di connettersi a un server in modo cifrato e autenticato. Esso utilizza una **coppia di chiavi crittografiche**, una pubblica che viene caricata sul proprio account Github e una privata solo sul tuo computer.
 
-Lista
-- **A:** a;
-- **B:** b;
-- c;
-- d.
+L'autenticazione nel mio caso è già stata fatta in maniera automatica quando scaricai Github Desktop difatti sono riuscito a fare una push su Github senza dover compiere alcuna procedura proprio perché questa macchina da cui sto scrivendo questo file è già autenticata.
 
----
+In questo caso però non è esplicita la chiave SSH.
+
+----*nulla di troppo importante da aggiungere*----
 
 ## How to make pull request and open source contribution
 
-Lorem Ipsum **Lorem Ipsum** (lato server, eseguito su Node.js) di una web application.
-
-Lista
-- **A:** a;
-- **B:** b;
-- c;
-- d.
+-----
 
 
 ## Riassunto comandi
@@ -396,7 +392,11 @@ Ecco una lista dei comandi utilizzati in questo documento:
 
 - **git add**: aggiunge un file nella staging area
 
+- **git add .**: aggiunge tutti i file nella staging area
+
 - **git commit -m messaggio**: effettua la commit dei file nella stage area con un messaggio per spiegare le modifiche
+
+- **git commit -am "messaggio"**: aggiunge le modifiche nella staging zone e fa la commit con quel messaggio (due step in una riga).
 
 - **Schema del workflow**: `Working Dir` -> **git add** -> `Staging Area` -> **git commit** -> `Repo` -> **git push** -> `Github`
 
@@ -424,7 +424,7 @@ Ecco una lista dei comandi utilizzati in questo documento:
 
 - **git switch -c nome-branch**: crea un nuovo branche *"nome-branch"* e sposta l'ambiente di lavoro su quella nuova branch.
 
-- **git stash** serve per salvare temporaneamente le modifiche non ancora committate (sia file modificati che nuovi file tracked) e ripulire la working directory.
+- **git stash**: serve per salvare temporaneamente le modifiche non ancora committate (sia file modificati che nuovi file tracked) e ripulire la working directory.
 
 - **git stash pop**: applica l'ultimo stash (di default stash@{0}) e lo rimuove dalla lista.
 
@@ -435,8 +435,49 @@ stash@{1}: WIP on footer: added copyright section
 
 - **git stash apply stash@{n}**: serve per applicare uno stash senza rimuoverlo della lista.
 
-- **git stash drop stash@{n}** o **git stash drop "stash@{n}" su windows** cancella uno stash specifico mentre **git stash clear li cancella tutti**.
+- **git stash drop stash@{n}** o **git stash drop "stash@{n}" su windows**: cancella uno stash specifico mentre **git stash clear li cancella tutti**.
 
-- **git checkout 31aea8d** sposta il puntatore al commit corrente (HEAD) su quel commit specifico.
+- **git checkout 31aea8d**: sposta il puntatore al commit corrente (HEAD) su quel commit specifico.
 
+- **git rebase <branch-di-destinazione>**: serve a spostare una serie di commit su un altro punto della storia del repository, riscrivendo la cronologia; invece di fare un merge che crea un commit di unione, il rebase “riapplica” i tuoi commit su un altro branch, come se fossero stati creati lì fin dall’inizio. *Tale comando non si fa mai sul ramo principale.* Ne segue un esempio:
 
+`A---B---C` feature
+
+`D---E---F` main
+
+Si vuole aggiornare 'feature' con le modifiche di 'main'.
+
+*git checkout feature*
+
+*git rebase main*
+
+`D---E---F` main
+         \
+          `A'---B'---C'` feature
+
+I commit A, B, C sono stati riapplicati sopra l'ultimo commit di `main`.
+
+Quando si configura Git per la prima volta sul tuo PC:
+
+- **git config --global user.name "Luca"**
+
+- **git config --global user.email "tu@email.com"**
+
+- **git clone <url_del_repo>**: serve per "scaricare" un progetto da Github
+
+- **git push**: manda i commit locali al repository remoto (quindi su Github)
+
+- **git push -u origin nome-branch**: per fare la prima commit su un determinato branch
+
+- **git pull**: serve per poter scaricare e unire le modifiche da Github
+
+In Git, un remote è un collegamento a un repo remoto; quando si clona un progetto da Github, Git crea automaticamente un remote chiamato: **origin** che punta all'URL del repo su Github.
+
+- **git remote -v**: mostra tutti i remote configurati e gli URL associati, l'output è il seguente:
+
+*origin  git@github.com:luca/mio-repo.git (fetch)*
+*origin  git@github.com:luca/mio-repo.git (push)*
+
+- **git remote add**: collega un repo locale a uno remoto oppure aggiunge un secondo collegamento a un altro remoto.
+
+*git remote add <nome> <url>* 
