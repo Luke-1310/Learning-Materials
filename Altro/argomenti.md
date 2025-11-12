@@ -5,7 +5,7 @@
 
 ⚠️
 
-git
+git (quasi finito)
 
 UML
 
