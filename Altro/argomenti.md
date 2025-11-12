@@ -2,10 +2,9 @@
 
 ❌​: da iniziare
 
+-----
 
 ⚠️
-
-git (quasi finito)
 
 UML
 
@@ -13,11 +12,13 @@ docker
 
 Microservice Architecture and System Design with Python & Kubernetes
 
+-----
+
 ❌
 
 design pattern 
-singleton e factory 
-pro e contro
+
+singleton e factory -> pro e contro
 
 poliformismo
 
