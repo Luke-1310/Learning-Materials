@@ -396,7 +396,7 @@ Ecco una lista dei comandi utilizzati in questo documento:
 
 - **git commit -m messaggio**: effettua la commit dei file nella stage area con un messaggio per spiegare le modifiche
 
-- **git commit -am "messaggio"**: aggiunge le modifiche nella staging zone e fa la commit con quel messaggio (due step in una riga).
+- **git commit -am "messaggio"**: aggiunge le modifiche nella staging zone e fa la commit con quel messaggio (due step in una riga) e vale   solo per i file giàtracciati da Git e *non per quelli nuovi*.
 
 - **Schema del workflow**: `Working Dir` -> **git add** -> `Staging Area` -> **git commit** -> `Repo` -> **git push** -> `Github`
 
