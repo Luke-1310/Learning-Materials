@@ -377,6 +377,8 @@ In questo caso però non è esplicita la chiave SSH.
 
 ## How to make pull request and open source contribution
 
+----*nulla di troppo importante da aggiungere*----
+
 -----
 
 ## Riassunto comandi
