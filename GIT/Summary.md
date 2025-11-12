@@ -379,7 +379,6 @@ In questo caso però non è esplicita la chiave SSH.
 
 -----
 
-
 ## Riassunto comandi
 
 Ecco una lista dei comandi utilizzati in questo documento:
