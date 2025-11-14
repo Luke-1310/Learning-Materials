@@ -17,7 +17,7 @@ Ovviamente **Git** e **Github** sono due cose diverse dato che il secondo è un 
 
 ## GIT init e cartelle nascoste
 
-La prima cosa che si è fatto è creare tre cartelle dai nomi:
+La prima cosa che si è fatta è creare tre cartelle dai nomi:
 
 - **gitone**, **gittwo** e **gitthree**
 
