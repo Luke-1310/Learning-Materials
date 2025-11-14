@@ -6,6 +6,8 @@
 
 ⚠️
 
+database SQL +NSQL
+
 UML
 
 docker
@@ -30,4 +32,3 @@ classi astratte
 
 complessità di un algoritmo
 
-database SQL +NSQL
