@@ -8,7 +8,7 @@ NoSQL è un modalità di approccio per gestire un database super flessibile in q
 
 Un databse NoSQL è definito dalle seguenti caratteristiche:
 
-- **Non relazione**: indica che il database non utilizza tabelle relazionali con schemi rigidi come i database SQL.
+- **Non relazionale**: indica che il database non utilizza tabelle relazionali con schemi rigidi come i database SQL.
 
 - **Distribuito**: significa che i dati sono suddivisi e replicati su più nodi o server. 
 
