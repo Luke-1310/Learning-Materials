@@ -4,7 +4,7 @@ Canale -> freeCodeCamp.org
 
 ## What is NoSQL? Why use NoSQL? SQL vs NoSQL and Setting up
 
-NoSQL è un modalità di approccio per gestire un database super flessibile in quanto consente una grossa varità di tipi diversi di dato come **key value**, **document**, **tabular** e **graph formats**. 
+NoSQL è un modalità di approccio per gestire database in maniera super flessibile in quanto consente una grossa varità di tipi diversi di DB come **key value** (*database chiave-valore*), **document** (*database a documenti*), **tabular** (*database a colonne*) e **graph formats** (*database a grafi*). 
 
 Un databse NoSQL è definito dalle seguenti caratteristiche:
 
@@ -40,12 +40,41 @@ Un database è composto da più livelli:
 
 - **Livello di Storage**: è il livello più basso e si occupa della gestione fisica dei dati. Include l’archiviazione su disco, gli indici, la gestione delle transazioni, la concorrenza e la struttura dei file che contengono i dati reali.
 
-Dopo essermi loggato su Astra ho creato un db dal nome `fcc_tutorial` e con il seguente keyspace `tabular` che è la tipologia di dato che tratterò per primo.
+Dopo essermi loggato su Astra ho creato un db dal nome `fcc_tutorial` e con il seguente keyspace `tabular` che è la tipologia di database che tratterò per primo. Per keyspace si intende il primo livello di suddivisione logica dei dati all'interno di un cluster NoSQL; raggruppa quindi tabelle e definisce le reegola di replica e distribuzione per quel gruppo di tabelle.
 
 ---
 
 ## Tabular Type 
 
+Conosciuto anche come database a colonne esse consiste in tabelle relazionali, ovvero con un certo schema alla base. Ho creato una tabella dal nome `Books` con i seguenti attributi:
+
+- `Book ID`: *"UUID -> universal unique identifier"*
+- `Author`: *text*
+- `Title`: *text*
+- `Year`: *int*
+- `Categories`: *set of text*
+- `Timestamp`: *timestamp*
+
+Ho definito lo schema della tabella e il campo **“Book ID”** fungerà da chiave del record, ovvero l’elemento utilizzato per individuare rapidamente quel dato.
+Nei database NoSQL questa chiave è chiamata **“chiave di partizione”** perché determina in quale nodo del cluster verranno memorizzati i dati. Le righe che condividono la stessa chiave di partizione vengono infatti salvate nello **stesso nodo**, e una query basata su quella key restituirà **tutte** le righe associate a quella partizione.
+
+Quindi, ora, su Astra ho iniziato digitando il seguente comando nella CQL Console `describe keyspaces;` per visualizzare tutte le keyspaces presenti nel db in quel momento. Il seguente comando permette di usare una specifica keyspace `use tabular;` per poi digitare `CREATE TABLE IF NOT EXISTS books (...)` con tutti i campi come segue:
+
+`CREATE TABLE IF NOT EXISTS books (`
+        `... bookid uuid,`
+        `... author text,`
+        `... title text,`
+        `... year int,`
+        `... categories set <text>,`
+        `... added timestamp,`
+        `... PRIMARY KEY (bookid)`
+        `... );`
+
+per poi fare la seguente insert:  `INSERT INTO books(bookid, author, title, year, categories, added) VALUES (uuid(), 'Bobby Brown', 'Dealing With Tables', 1999, {'programming', 'computers' }, toTimeStamp(now()));`. Per poi vedere se funziona basta fare `SELECT * from books` e... 
+
+![insert_img](img/first_insert.png)
+
+funziona! 24:10
 
 ---
 
