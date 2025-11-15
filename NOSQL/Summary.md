@@ -74,11 +74,55 @@ per poi fare la seguente insert:  `INSERT INTO books(bookid, author, title, year
 
 ![insert_img](img/first_insert.png)
 
-funziona! 24:10
+funziona! 
+
+Dopo aver fatto un ulteriore INSERT ho stampato nuovamente tutti gli insert. Per selezionare un singolo record dalla tabella basta cercare il uuid desiderato e usare il segunte comando:
+
+`SELECT * FROM books`
+        `... where bookid = *codice uuid*`
+
+Per selezionare più elementi dalla tabella bisogna lavorare con le partizioni; per fare ciò ho creato una nuova tabella `restaurant_by_country` come segue:
+
+`CREATE TABLE IF NOT EXISTS restaurant_by_country (`
+        `... country text,`
+        `... name text,`
+        `... cuisine text,`
+        `... url text,`
+        `... PRIMARY KEY (country), name, url`
+        `... ) WITH CLUSTERING ORDER BY(name DESC, url ASC);`
+
+Tutti i dati relativi a questa tabella verranno distribuiti nel database in base al paese mentre gli altri due attributi *name* e *url* vengono definiti come **CLUSTERING KEYS** e sono gli attributi che ordinano fisicamente i dati all'interno di una stessa partizione determinando l'ordine di restituzione delle righe quando si fa una quet sulla stessa partition key.
+
+Dopo aver fatto alcuni insert la stampa di tutti i ristoranti è la seguente:
+
+![restaurnat_list](img/restaurants.png)
+
+Per poi vedere, ad esempio, tutti i ristoranti locati in singapore basta scrivere `SELECT * from restaurant_by_country WHERE country='SINGAPORE';`.
+
+I **database tabular NoSQL** utilizzano una struttura a tabelle, ma **non sono equivalenti ai database relazionali**. Nei database SQL lo schema è rigido, esistono relazioni tra tabelle tramite join e le chiavi servono solo a identificare i record. Nei sistemi tabular NoSQL lo schema è più flessibile, non esistono join e i dati vengono spesso duplicati per velocizzare le query. 
+
+Le *chiavi* hanno un ruolo strutturale: la **partition key** decide in quale nodo vengono salvati i dati, mentre le **clustering keys** ordinano fisicamente le righe all’interno della partizione. I database relazionali scalano potenziando un singolo server, mentre quelli tabular NoSQL scalano aggiungendo nodi al cluster. Le query SQL sono flessibili e complesse, mentre nei database tabular NoSQL sono rapidissime ma devono essere progettate in anticipo in base ai pattern di accesso ai dati.
 
 ---
 
 ## Document Type 
+
+I **document database** sono orientati ai documenti e sono semplici da gestire perché hanno uno schema molto più flessibile; gli oggetti hanno una `chiave` e dei `valori` come segue:
+
+![document example](img/document_type.png)
+
+Questa tipologia di documenti è nota con il nome di **JSON (JavaScript Object Notation)** ed è il formato più popolare quando si parla di database ad oggetti. Un gruppo di documenti è detto **collezione**; andando a sostituire le tabelle usate precedentemente.
+
+Si farà quindi una collezione di oggetti mediante l'utilizzo di una `document API`. API sta per **Application Programming Interface** ed è un insieme di regole e strumenti che permette a due programmi o applicazioni di comunicare e scambiarsi dati in modo standardizzato.
+
+Verrà utilizzato per comunicare col database che ho creato; in questo caso si utilizzeranno delle `richieste HTTP`. I metodi HTTP più utilizzati sono:
+
+![http methods](img/http_methods.png)
+
+Molto brevemente, `GET` serve a **recuperare** le informazioni, `POST` a **inviarle o crearle**, `PUT` a **aggiornare** dati esistenti e `DELETE` a **rimuoverli**.
+
+Per interagire con i dati sono necessari diversi endpoint. Un **endpoint** è un URL o un URI a cui un client può inviare richieste HTTP per interagire con una specifica risorsa del server. Per il metodo `GET` si ha: `www.my-burger-api.com/burgers`così come per `POST` mentre per editare `PUT` o `DELETE` un record singolo si usa `www.my-burger-api.com/burgers/{id}*`.
+
 
 
 ---
