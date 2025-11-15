@@ -6,17 +6,17 @@
 
 ⚠️
 
-database SQL +NSQL
-
 UML
+
+-----
+
+❌
 
 docker
 
 Microservice Architecture and System Design with Python & Kubernetes
 
------
-
-❌
+database SQL +NSQL (nello specifico, andare su un porgettino più serio)
 
 design pattern 
 
