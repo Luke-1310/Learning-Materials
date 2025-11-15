@@ -1,6 +1,7 @@
 Link al video -> https://www.youtube.com/watch?app=desktop&v=xh4gy1lbL2k
 Canale -> freeCodeCamp.org
 
+# IL VIDEO È OBSOLETO! Per tanto si sono raccolte solamente le informazioni teoriche senza però poter effettuare tutti i test voluti.
 
 ## What is NoSQL? Why use NoSQL? SQL vs NoSQL and Setting up
 
@@ -123,35 +124,39 @@ Molto brevemente, `GET` serve a **recuperare** le informazioni, `POST` a **invia
 
 Per interagire con i dati sono necessari diversi endpoint. Un **endpoint** è un URL o un URI a cui un client può inviare richieste HTTP per interagire con una specifica risorsa del server. Per il metodo `GET` si ha: `www.my-burger-api.com/burgers`così come per `POST` mentre per editare `PUT` o `DELETE` un record singolo si usa `www.my-burger-api.com/burgers/{id}*`.
 
+Ho creato un nuovo `keyspace` di nome *document* ed è risultato quindi necessario un token per poter comunicare con il databas il quale è stato ricavato nella sezione *connect*.
 
+--- VIDEO OBSOLETO! IMPOSSIBILE PROSEGUIRE ---
+
+In generale, un esempio di GET potrebbe essere il seguente:
+
+`{`
+   `"data": {`
+      `"2axc332...":{`
+      `"description": "make dinner to apologize"`
+      `"done": false`
+      `"id": 1`
+      `"title": "Make Dinner"` 
+      `}`
+   `}`
+`}`
+
+La *terza riga* corrisponde alla chiave dell'oggetto JSON trattato il cui valore è a sua volta un altro oggetto.
 
 ---
 
 ## Key-Value Type
 
+![key database](img/key_database.png)
+
+È tipologia semplice di database dove si ha una coppia di due colonne, una per la chiave ed un'altra per il valore; in realtà è possibile avere anche più di una colonna per salvare i valori.
+
+--- VIDEO OBSOLETO! IMPOSSIBILE PROSEGUIRE ---
 
 ---
 
 ## Graph Type
 
-
----
-
-## Multi-model Type explained
-
-
----
-
-## Project 1
-
-
----
-
-## Project 2
-
-
----
-
-## Where to go next
+È ottimale per poter salvare delle informazioni con delle relazioni tra loro, si sta quindi parlando di `nodi`. Ogni nodo è collegato dda un arco che rappresenta la relazione.
 
 ---
