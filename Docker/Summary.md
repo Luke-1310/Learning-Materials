@@ -33,7 +33,23 @@ Per poter rispondere si parte dall'OS. Un sistema operativo è costituito da due
 
 **Docker virtualizza l'application layer** contenendo le applicazioni e altri servizi e app installati sopra quel livello e utilizza il Kernel dell'host mentre il **la macchina virtuale virtualizza entrambi i livelli** non utilizzando il kernel dell'host ma il proprio.
 
-Tale differenza comporta che i pacchetti o immagini di Docker siano molto più leggere
+![Cosa virtualizzano](img/what_virtualize.png)
+
+Tale differenza comporta che **i pacchetti o immagini di Docker siano molto più leggeri** perché devono implementare un solo livello del sistema operativo nell'ordine di alcuni *MB* contro alcuni *GB*; comportando anche una **maggiore velocità** nel primo caso rispetto al secondo.
+
+Per quanto riguarda la **compatibilità** si ha un discorso diverso dato che le macchine virtuali sono compatibili con tutti gli OS mentre Docker è compatibile solo con distro Linux. Per funzionare su Windows utilizza WSL2 (*Windows Subsystem for Linux*) virtualizzando una leggera distro Linux su Windows.
+
+![Differenze](img/differences.png)
+
+**Docker Desktop** include:
+
+- **Docker Engine**: il cuore di Docker, rende possibile la virtualizzazione gestendo istanze (immagini) e container;
+
+- **Docker CLI - Client**: che è un interfaccia da linea di comando per eseguire i comandi Docker;
+
+- **GUI Client**: ovvero una user frinedly UI
+
+- ...
 
 ---
 
