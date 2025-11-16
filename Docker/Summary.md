@@ -1,5 +1,8 @@
 Link al video -> https://www.youtube.com/watch?v=pg19Z8LL06w
 Canale -> TechWorld with Nana
+REPO -> https://gitlab.com/nanuchi/docker-in-1-hour
+
+[Riassunto Comandi Docker](#Riassunto-Comandi-Docker)
 
 ## What's Docker?
 
@@ -123,15 +126,50 @@ La differenza tra un **Docker Registry** e una **Docker Repository** è che il *
 
 Quindi *Docker Hub* è un registry e con esso si può hostare una repo privata o pubblica per le proprie applicazioni.
 
-## Dockerfile - Create own Images
+## Dockerfile - Create own Images e Build Image
 
+Per **creare una propria Docker Image**  quando l'applicazione sviluppata è pronta è necessario creare una **"definition"** sul come costruire una immagine della nostra applicazione e tale definizione viene scritta in un file denominato **Docker File**.
 
-Link a una sezione nello stesso file
+Mediante un file fornito dalla ragazza artefice del tutorial si può provare a creare la propria Image. 
 
-[Nome del link](#nome-della-sezione)
+Il file è un file in Javascript `server.js` che dice "Welcome to my awesome app!" quando accedi al localhost:3000 e un file `package.json` che contiene la dipendenza con la libreria "express" necessaria per avviare l'applicazione.
 
-Devi mettere il titolo della sezione in minuscolo.
+Nella cartella principale si crea un file denominato **Dockerfile**; per avviare l'app col seguente comando `node src/server.js` serve Node installato. 
 
-Gli spazi diventano trattini (-).
+![structure of a Dockerfile](img/Dockerfile_structure.png)
 
-Caratteri speciali (accenti, punteggiatura, ecc.) vengono rimossi.
+`FROM node:19-alpine` è l'immagine base (genitore) dalla quale poi creare la propria immagine
+
+Altri commenti nel file Dockerfile in `docker-in-1-hour-main/src/Dockerfile`
+
+![host_env](img/example.png)
+
+Per poi creare l'immagine bisogna usare il seguente comando: `docker build -t node-app:1.0 .` dove `-t` o `--tag` setta il nome e un tag (opzionale) col seguente formato: "name:tag" mentre l'ultimo parametro è la locazione del file "." sta per la corrente corrente
+
+**RICORDATI DI METTERTI NELLA CARTELLA CORRETTA (DOVE SI TROVA IL FILE Docker) PER POTER COSTRUIRE L'IMMAGINE**
+
+Ecco i risultati del comando:
+
+![build_image](img/build_image.png)
+
+L'immagine è stata creata ed infatti è possibile vederla digitando `docker images`; inoltre con `docker run -d -p 3000:3000 node-app:1.0` vediamo che funziona se nel browser si digita localhost:3000
+
+![docker image](img/docker_images.png)
+
+## Docker Overview
+
+![docker overview](img/docker_overview.png)
+
+---
+
+## Riassunto Comandi Docker
+
+- **
+- **
+- **
+- **
+- **
+- **
+- **
+- **
+
