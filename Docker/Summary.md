@@ -55,20 +55,39 @@ Per quanto riguarda la **compatibilità** si ha un discorso diverso dato che le 
 
 ## Docker Images vs Containers
 
-Lorem Ipsum **Lorem Ipsum** (lato server, eseguito su Node.js) di una web application.
+Docker permette di "impacchettare" le applicazioni con il loro environment per poterlo utilizzare e condividere facilmente.
+
+Una **Docker Image** è sostanzialmente un artefatto (prodotto finito) ma con altre informazioni al suo interno oltre a poter modificare e aggiungere file e cartelle in tale immagine.
+
+Un **Dokcer Container** esegue le immagini, è quindi l'elemento che effettivamente avvia l'applicazione.  **Un container è un istanza in esecuzione di un immagine**. 
+
+`Per un immagine si possono avviare diversi container.`
 
 ---
 
-
 ## Docker Registries
 
-Lorem Ipsum **Lorem Ipsum** (lato server, eseguito su Node.js) di una web application.
+È chiaro quindi che i container si ottengono eseguendo delle immagini, ma come si ottengono le immagini? È qui che entrano in gioco i **Docker Registries**.
+
+Essi sono servizi che archiviano e distribuiscono le *Docker Images*. Un registry permette di salvare, recuperare e condividere le immagini tra sviluppatori, team o sistemi di deploy. Il più noto è **Docker Hub**, ma esistono anche registry privati o cloud come Amazon ECR, GitHub Container Registry e Google Artifact Registry.
+
+**Immagini ufficiali** sono disponibili nei rispettivi siti di, ad esempio, Mongo e Postgres.
 
 ---
 
 ## Docker Image Versions
 
-Lorem Ipsum **Lorem Ipsum** (lato server, eseguito su Node.js) di una web application.
+Ovviamente le tecnologie utilizzate variano nel corso del tempo, aggiornandosi; al contempo anche le **Docker Image** si aggiornano cambiando di versione.
+
+Una volta trovata l'immagine che si vuole utilizzare su, Docker Hub ad esempio, si sceglie una versione specifica e si digita il seguente comando da Docker CLI `docker pull nginx:1.23`. Docker hub è la location settata di default per scaricare le immagini. Per poi eseguirla basta digitare `docker run nginx:1.23`. Il comando `docker ps` riferisce i container in esecuzione:
+
+![docker_cli](img/docker_cli.png)
+
+Quando si avvia un container il terminale si blocca, per avviarne uno in background basta digitare `docker run -d nginx:1.23` (`-d` o `--detach`). Per vedere i log del container in backgroud si usa `docker logs id_del_container`.
+
+Docker "pulla" (pulls) l'immagine in automatico se lanciando il comando run non la trova in locale. Inoltre, come già detto, docker è in grado di gestire due versioni della stessa applicazione e qui se ne può vedere un esempio:
+
+![due versioni di nginx](img/nginx_versions.png)
 
 ---
 
