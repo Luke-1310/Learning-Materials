@@ -6,8 +6,6 @@
 
 ⚠️
 
-docker
-
 UML
 
 node.js
