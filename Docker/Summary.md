@@ -107,10 +107,23 @@ Funziona!
 
 È un buon standard utilizzare la stessa porta che il container sceglie (ex. MySQL usa la 3306, tengo questa).
 
-## Start and Stop Containers
 
 
+C'è un importante dettaglio da sottolinare: **il comando docker run crea un nuovo container ogni volta che viene eseguito**. Il comando `docker ps -a (--all)` mostra tutti i container; sia quelli interotti che quelli in esecuzione, mentre `docker start {id}` avvia quel specifico docker. Anziché ricordarsi il nome automatico assegnato da docker è utile rinominare un container con un nome più utile quando esso viene creato aggiungendo un ulteriore flair `docker run --name web-app -d -p 9000:80 nginx:1.23` di cui segue il risultato:
 
+![custom_docker](img/custom_docker.png)
+
+## Private Docker Registries e Registry vs Repository
+
+La già citata **Docker Hub** è un **Public Image registry** ma le aziende creano le proprie immagini che devono restare private. Ogni cloud provider come AWS, Google Cloud e Microsoft Azure ha un servizio dedicato a private Docker registry che necessitano un'autenticazione.
+
+La differenza tra un **Docker Registry** e una **Docker Repository** è che il **registry** è il servizio che ospita e gestisce le immagini, mentre la **repository** è una collezione di versioni della stessa immagine all’interno del registry. In altre parole, un registry contiene molte repository, e ogni repository contiene più tag/versioni di una specifica immagine.
+
+![repo vs registry](img/repo_vs_registry.png)
+
+Quindi *Docker Hub* è un registry e con esso si può hostare una repo privata o pubblica per le proprie applicazioni.
+
+## Dockerfile - Create own Images
 
 
 Link a una sezione nello stesso file
