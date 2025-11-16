@@ -91,6 +91,26 @@ Docker "pulla" (pulls) l'immagine in automatico se lanciando il comando run non 
 
 ---
 
+## Port Binding
+
+Ora la domanda è: **"Come si può accedere al container?"** Beh, non si può al momento poiché tale applicazione sta venendo eseguita nella rete chiusa *Docker Network*; quindi non può essere acceduta dal browser del pc, ad esempio. 
+
+Va quindi **esposto il container** all'host mediante un **port binding**, ovvero aggiungendo un flair quando si crea il container.
+
+Il comando `docker stop {id}` serve per interrompere l'esecuzione di un container. Bene, ora col seguente comando `docker run -d -p 9000:80 nginx:1.23` cambiando la porta dalla 80 alla 9000 e la `p` sta per `publish`.  
+
+**Ovviamente, un solo servizio può essere eseguito su una certa porta.**
+
+![port_binding_example](img/port_binding_example.png)
+
+Funziona!
+
+È un buon standard utilizzare la stessa porta che il container sceglie (ex. MySQL usa la 3306, tengo questa).
+
+## Start and Stop Containers
+
+
+
 
 
 Link a una sezione nello stesso file
