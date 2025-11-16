@@ -6,13 +6,15 @@
 
 ⚠️
 
+docker
+
 UML
+
+node.js
 
 -----
 
 ❌
-
-docker
 
 Microservice Architecture and System Design with Python & Kubernetes
 
