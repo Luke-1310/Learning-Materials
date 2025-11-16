@@ -164,12 +164,30 @@ L'immagine è stata creata ed infatti è possibile vederla digitando `docker ima
 
 ## Riassunto Comandi Docker
 
-- **
-- **
-- **
-- **
-- **
-- **
-- **
-- **
+- **docker pull nginx:1.23**  
+  Scarica l’immagine *nginx* versione **1.23** dal registry Docker Hub.
+
+- **docker run nginx:1.23**  
+  Avvia un container basato sull’immagine *nginx:1.23* in primo piano (bloccando il terminale).
+
+- **docker ps**  
+  Mostra tutti i container **attivi** (in esecuzione).
+
+- **docker run -d nginx:1.23**  
+  Esegue nginx in modalità **detached**, cioè in background.
+
+- **docker stop {id}**  
+  Ferma il container indicato tramite il suo **ID** o **nome**.
+
+- **docker run -d -p 9000:80 nginx:1.23**  
+  Avvia nginx in background esponendo la porta **80 del container** sulla porta **9000 della macchina host**.
+
+- **docker ps -a**  
+  Mostra **tutti** i container, sia attivi che stoppati.
+
+- **docker start {id}**  
+  Avvia un container **già esistente** e fermo, indicato tramite ID o nome.
+
+- **docker build -t node-app:1.0 .**  
+  Costruisce un’immagine Docker usando il Dockerfile nella directory corrente, dandole il tag **node-app:1.0**.
 
