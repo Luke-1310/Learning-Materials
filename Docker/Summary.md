@@ -191,3 +191,4 @@ L'immagine è stata creata ed infatti è possibile vederla digitando `docker ima
 - **docker build -t node-app:1.0 .**  
   Costruisce un’immagine Docker usando il Dockerfile nella directory corrente, dandole il tag **node-app:1.0**.
 
+- **docker rm {id}**: Cancella il container 
